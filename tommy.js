@@ -107,7 +107,7 @@ function solveURL(data){
 	// Convert our bytes back into text
 	var decryptedText = aesjs.utils.utf8.fromBytes(decryptedBytes);
 	urldata=decryptedText.replace(/@/g, '');
-	if(!urldata.substring(0,4)=="http"){
+	if(urldata.substring(0,4)!="http"){
 		urldata="http://"+urldata;
 	}
 	document.getElementById("redir-url").href=urldata;
