@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="./w3.css" rel="stylesheet">
+<script src="./tommy.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js"></script>
+</head>
+<body class="w3-container w3-pale-red">
+
+	<div class="w3-container w3-content w3-round" id="dashboard">
+		<div class="w3-blue w3-padding w3-container">
+		<h1 class="w3-center">Welcome to our free protected link sharing service</h1>
+		<h2 class="w3-pale-yellow w3-center"><span class="w3-text-green">https://</span>url.juma.io</h2>
+		</div>
+		<div class="w3-container w3-padding w3-white">
+			<label class="w3-label w3-margin">Enter the link to share :&emsp;&emsp; </label>
+			<input placeholder="-> http://example.com/" class="w3-margin" type="text" id="url" onchange="makeRed(this)" onclick="twiceWidth(this);"/>
+			<output class="w3-margin w3-padding w3-light-grey w3-text-red" id="invalid" style="display:none">Invalid URL</output>
+			<br/>
+			<label class="w3-label w3-margin">Enter secret key<span class="w3-text-black">(Optional)</span> :</label>
+			<input placeholder="16 Characters Max" onchange="valueSet(this);" onKeyPress="valueSet(this);" class="w3-margin" type="text" id="keygen" />
+			<div class="w3-btn w3-margin" onclick="keygen();" >Generate key</div>
+			<br/>
+			<div class="w3-container w3-margin" >
+				<div class="w3-btn w3-center" style="display:block;width:300px;margin:0 auto;" onclick="checkSubm();">Generate Sharing URL</div>
+			</div>
+		</div>
+	</div>
+	<div class="w3-container w3-content w3-round" style="display:none" id="redir">
+			<div class="w3-blue w3-padding w3-container">
+				<h4 class="w3-container w3-white w3-padding-32">Visit the following URL at your own risk: <a style="word-wrap: break-word;" class="w3-text-red w3-light-grey" href="" id="redir-url" ></a></h4>
+				<div onclick="btd();" class="w3-btn w3-white w3-center" style="display:block;width:350px;margin:16px auto;">Go To Link Sharing Dashboard</div>
+			</div>
+	</div>
+	
+<script>
+checkPath();
+</script>
+</body>
+</html>
+
+
+
+<!--
+
+<input type="text" id="inputtext"/>
+<button onclick="showmeoutput();">GO</button></br>
+<output id="output"></output>
+-->
